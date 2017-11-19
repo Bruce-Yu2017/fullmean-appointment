@@ -25,12 +25,12 @@ export class ShowComponent implements OnInit {
     });
   }
 
-  search() {
-    this._service.makeSearch(this.searchdata, (res) => {
-      this.appointments = res;
-      this.searchdata = ""
-    })
-  }
+//   search() {
+//     this._service.makeSearch(this.searchdata, (res) => {
+//       this.appointments = res;
+//       this.searchdata = ""
+//     })
+//   }
 
   ngOnInit() {
     this._service.retrieveAppointment((res) => {

@@ -1,0 +1,8 @@
+<h1>Doctor's appointment</h1>
+<!-- angular validation from w3 -->
+<!-- https://www.w3schools.com/angular/angular_validation.asp -->
+<form (submit) = "login()">
+  Name: <input type="text" name="name" [(ngModel)] = "user" #name = "ngModel" required minlength = "4"><br>
+  <p *ngIf = "!name.valid" style="color:red;">Please put a valid name.</p>
+  <input type="submit" value="Log in">
+</form>

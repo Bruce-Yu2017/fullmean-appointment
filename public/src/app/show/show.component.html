@@ -1,0 +1,26 @@
+<h1>Doctor's appointment</h1>
+<!-- <form (submit)="search()" #formData = "ngForm">
+    Search:<input type="text" name="search" required
+    [(ngModel)]="searchdata" #searchit="ngModel" > 
+    <input type="submit" [disabled]="!formData.valid" value="Search">
+</form> -->
+<form (submit)="logout()">
+  <input type="submit" value="Logout">
+</form>
+<br>
+<table border="1">
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Patient name</th>
+    <th>Complain</th>
+  </tr>
+  <tr *ngFor = "let a of appointments">
+    <td>{{a.date}}</td>
+    <td>{{a.time}}</td>
+    <td>{{a.user}}</td>
+    <td>{{a.complaint}} <span *ngIf = "user == a.user"><button (click) = "delete(a._id)">Cancle</button></span></td>
+  </tr>
+</table>
+<br>
+<a [routerLink]="['/new']"><button>Add new appointment</button></a>

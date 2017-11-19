@@ -1,0 +1,39 @@
+<h1>New appointment</h1>
+<form (submit)="onSubmit()" #myForm='ngForm'>
+  Date: <input type="date" name="date" min = "{{future | date: 'yyyy-MM-dd'}}" required [(ngModel)]="newappoint.date" #date = "ngModel" ><br>
+  <p *ngIf = "!date.valid && !date.pristine">You have to choose a date.</p>
+  Time: <select name="time" required [(ngModel)] = "newappoint.time" #time = "ngModel" >
+    <option value="8">8:00 AM</option>
+        <option value="9">9:00 AM</option>
+        <option value="10">10:00 AM</option>
+        <option value="11">11:00 AM</option>
+        <option value="12">12:00 PM</option>
+        <option value="13">1:00 PM</option>
+        <option value="14">2:00 PM</option>
+        <option value="15">3:00 PM</option>
+        <option value="16">4:00 PM</option>
+        <option value="17">5:00 PM</option>
+  </select><br>
+  <p *ngIf = "!time.valid" style="color:red;">You have to choose a date.</p>
+  complaint: <input type="text" name="complaint" [(ngModel)] = "newappoint.complaint" required minlength="10" #complaint = "ngModel"><br>
+  <p *ngIf = "!complaint.valid" style="color:red;">You have to finish your complaint.</p>
+  <a [routerLink] = "['/show']"><button>Cancle</button></a>
+  <input type="submit" value="Add appointment">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
